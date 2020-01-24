@@ -3,6 +3,7 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 var express = require('express');
+const db = require('../db/db.json');
 
 //establishing express
 var app = express();
@@ -23,9 +24,26 @@ app.get('/', function(req, res) {
 app.get('/notes', function(req, res) {
     res.sendFile(path.join(__dirname, 'notes.html'));
 });
-
-
 //===================================================================================================
+
+//Calling notes API
+app.get('/api/notes', function(req, res) {
+    return res.json(db);
+
+});
+
+app.post('/api/notes', function(req, res) {
+    var newNote = req.body;
+
+    newNote.routeName = newNote.name.replace(/\s+/g, "").toLowerCase();
+
+    console.log(newNote);
+
+    characters.push(newNote);
+
+    res.json(newNote);
+})
+
 //establishing the server
 app.listen(PORT, function() {
     console.log("Server is listening on PORT: " + PORT);
