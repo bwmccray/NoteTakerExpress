@@ -12,7 +12,9 @@ I WANT to be able to load the page and press start that will bring me to the not
 I WANT to be able to input messages with Titles, and an option to delete my note when I choose.
 
 # Example of Layout
-![Screenshot](templateGen.png)
+![Screenshot](/public/assets/images/noteTaker.gif)
+![Screenshot](/public/assets/images/noteTaker.png)
+
   
 
 # How to Use 
